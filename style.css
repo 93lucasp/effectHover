@@ -1,0 +1,95 @@
+.hero--home {
+    height: 750px;
+}
+
+.hero--home p {
+    font-size: 1.4em;
+}
+
+.hero--home .btn {
+    z-index: 2;
+    position: relative;
+}
+
+.hero--home__left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 50%;
+    z-index: 1;
+}
+
+@media screen and (max-width: 992px) {
+    .hero--home__left {
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 50%;
+    }
+}
+
+.hero--home__left:after {
+    content: '';
+    transition: opacity 1.2s;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 1;
+    z-index: 2;
+    background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1));
+}
+
+@media screen and (max-width: 992px) {
+    .hero--home__left:after {
+        background: linear-gradient(black, rgba(0, 0, 0, 0.1));
+    }
+}
+
+.hero--home__left:hover:after {
+    opacity: 0;
+}
+
+.hero--home__right {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    transition: background 1.2s;
+}
+
+@media screen and (max-width: 992px) {
+    .hero--home__right {
+        left: 0;
+        top: 50%;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.hero--home__right:after {
+    content: '';
+    transition: opacity 1.2s;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 1;
+    z-index: 2;
+    background: linear-gradient(to left, black, rgba(0, 0, 0, 0.1));
+}
+
+@media screen and (max-width: 992px) {
+    .hero--home__right:after {
+        background: linear-gradient(rgba(0, 0, 0, 0.1), black);
+    }
+}
+
+.hero--home__right:hover:after {
+    opacity: 0;
+}

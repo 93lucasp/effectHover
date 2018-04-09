@@ -1,0 +1,117 @@
+.hero {
+    height: 600px;
+    @extend .cover;
+    position: relative;
+    &:before {
+        content: '';
+        z-index: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-image: linear-gradient(-180deg, #333333 4%, rgba(158, 158, 158, 0.00) 42%);
+        background-color: rgba(43, 43, 43, .54);
+    }
+    &--signup {
+        height: 500px;
+        padding-top: 10%;
+        a {
+            color: #fff;
+        }
+        p {
+            font-size: 1.4em;
+        }
+    }
+    &--explore {
+        p {
+            font-size: 1.4em;
+        }
+    }
+    &--project {
+        height: 800px;
+        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+            height: 1000px;
+            padding-top: 10em;
+        }
+    }
+    &--home {
+        height: 750px;
+        p {
+            font-size: 1.4em;
+        }
+        .btn {
+            z-index: 2;
+            position: relative;
+        }
+        &__left {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 50%;
+            @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 50%;
+            }
+            z-index: 1;
+            &:after {
+                content: '';
+                transition: opacity 1.2s;
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                opacity: 1;
+                z-index: 2;
+                background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, .1));
+                @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+                    background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, .1));
+                }
+            }
+            &:hover {
+                &:after {
+                    opacity: 0;
+                }
+            }
+        }
+        &__right {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            transition: background 1.2s;
+            @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+                left: 0;
+                top: 50%;
+                right: 0;
+                bottom: 0;
+            }
+            &:after {
+                content: '';
+                transition: opacity 1.2s;
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                opacity: 1;
+                z-index: 2;
+                background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, .1));
+                @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+                    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, 1));
+                }
+            }
+            &:hover {
+                &:after {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
